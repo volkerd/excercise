@@ -34,9 +34,20 @@ var cmdDescribe = &cobra.Command{
 	},
 }
 
+var cmdServe = &cobra.Command{
+	Use:   "serve",
+	Short: "Start Webserver",
+	Long:  `Start Webserver at http://localhost:8080`,
+	Run: func(cmd *cobra.Command,
+		args []string) {
+		serve()
+	},
+}
+
 func Exec() {
 	rootCmd.AddCommand(cmdLs)
 	rootCmd.AddCommand(cmdDescribe)
+	rootCmd.AddCommand(cmdServe)
 	err := rootCmd.Execute()
 	if err != nil {
 		fmt.Println(err)

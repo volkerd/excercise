@@ -1,4 +1,4 @@
-package common
+package cmd
 
 import (
 	"testing"
@@ -17,7 +17,7 @@ var dates = []struct {
 
 func TestFormatDate(t *testing.T) {
 	for _, date := range dates {
-		out := FormatDate(date.in)
+		out := formatDate(date.in)
 		if out != date.want {
 			t.Errorf("FormatDate(%q) = %q, want %q", date.in, out, date.want)
 		}

@@ -1,8 +1,8 @@
-package common
+package cmd
 
 import "time"
 
-func FormatDate(date string) string {
+func formatDate(date string) string {
 	ref := "2006-01-02T15:04:05-07:00"
 	t, err := time.Parse(ref, date)
 	if err != nil {
