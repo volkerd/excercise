@@ -1,1 +1,3 @@
 # excercise
+
+Übungen in Go
