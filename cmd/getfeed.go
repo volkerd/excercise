@@ -2,10 +2,8 @@ package cmd
 
 import (
 	"errors"
-	"fmt"
 	"github.com/mmcdole/gofeed"
 	"log"
-	"os"
 	"regexp"
 )
 
@@ -38,8 +36,7 @@ func newsList(count int) NewsList {
 	fp := gofeed.NewParser()
 	feed, err := fp.ParseURL("https://www.heise.de/rss/heise-atom.xml")
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 	for _, item := range feed.Items {
 		id, err := getId(item.GUID)
